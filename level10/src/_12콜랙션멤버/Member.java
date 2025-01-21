@@ -1,6 +1,6 @@
 package _12콜랙션멤버;
 
-public class Member{
+public class Member implements Comparable<Member>{
 	private String id;
 	private String pw;
 	private String name;
@@ -33,6 +33,15 @@ public class Member{
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+	@Override
+	public int compareTo(Member o) {
+		if(name.compareTo(o.name) == 0) {
+			return id.compareTo(o.id);
+		}
+		return name.compareTo(o.name);
 	}
 
 

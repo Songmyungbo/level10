@@ -17,7 +17,7 @@ public class MemberComp implements Comparator<Member>{
 		int result = 0;
 		switch(sortBy) { 
 		case ID : result = o1.getId().compareTo(o2.getId());break;
-		case NAME : result = o1.getName().compareTo(o2.getName());break;
+		case NAME : result = o1.getName().compareTo(o2.getName());if(result == 0) return 1;break;
 		}
 		return result;
 	}

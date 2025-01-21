@@ -3,6 +3,8 @@ package _12콜랙션멤버;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+
+
 public class MemberDAO {
 	
 	
@@ -84,16 +86,17 @@ public class MemberDAO {
 		return;
 	}
 	public void printAll() {
-		TreeSet<Member> treeSet = new TreeSet<>(new MemberComp(MemberComp.SortBy.NAME));
+		TreeSet<Member> treeSet = new TreeSet<>();
 		
 		for(Member m : memberList) {
 			treeSet.add(m);
 		}
-		System.out.println("=================");
+		System.out.println("==================");
 		
 		for(Member ts : treeSet) {
 			System.out.println(ts);
 		}
+		
 		System.out.println("==================");
 	}
 	public String savePrintAll() {
