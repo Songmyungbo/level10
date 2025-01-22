@@ -1,0 +1,49 @@
+package _13다형성게임;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+public class GameManager {
+	Random ran = new Random();
+	static Scanner scan = new Scanner(System.in);
+	static String nextStage = "";
+	String curStage = "";
+		 //key	 value
+	Map<String, Stage> stageList = new HashMap<String, Stage>();
+
+	GameManager() {
+
+		stageList.put("TITLE", new StageTitle());
+		stageList.put("BATTLE", new StageBattle());
+		stageList.put("LOBBY", new StageLobby());
+
+		nextStage = "TITLE";
+	}
+
+	boolean changeStage() {
+		System.out.println("curStage : " + curStage); // TITLE LOBBY
+		System.out.println("nextStage : " + nextStage); // LOBBY BATTLE
+
+		if (curStage.equals(nextStage))
+			return true;
+
+		curStage = nextStage; // curStage = LOBBY BATTLE
+		Stage stage = stageList.get(curStage);
+		stage.init();
+
+		boolean run = true;
+		while (true) {
+			run = stage.update(); // nextStage = BATTLE
+			if (run == false)
+				break;
+		}
+
+		if (nextStage.equals(""))
+			return false;
+		else
+			return true;
+	}
+
+}

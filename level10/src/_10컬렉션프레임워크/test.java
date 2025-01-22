@@ -26,9 +26,6 @@ class Member2 implements Comparable<Member2>{
 		return "Member2 [name=" + name + ", id=" + id + "]";
 	}
 
-
-
-
 	@Override
 	public int compareTo(Member2 o) {
 		if(name.compareTo(o.name) == 0) {
