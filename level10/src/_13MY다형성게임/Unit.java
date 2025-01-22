@@ -6,6 +6,8 @@ public abstract class Unit {
 	int power;
 	String name;
 	
+	Unit(){};
+	
 	Unit(String name, int max, int pow){
 		this.name = name;
 		maxhp = max;
@@ -13,6 +15,9 @@ public abstract class Unit {
 		power = pow;
 		
 	}
+	
+	
+	
 	
 	
 	

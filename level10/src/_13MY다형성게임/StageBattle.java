@@ -26,15 +26,14 @@ public class StageBattle extends Stage{
 
 	@Override
 	public void init() {
-		unitManager.mon_list.clear();
+		unitManager.monList.clear();
 		unitManager.monsterRandomSet(4);
 		pList = null; //
-		pList = unitManager.player_list;
+		pList = unitManager.playerList;
 		mList = null;
-		mList = unitManager.mon_list;
+		mList = unitManager.monList;
 		monDeath = mList.size();
 		playerDeath = pList.size();
-		
 	}
-
+	
 }
