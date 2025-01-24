@@ -3,7 +3,7 @@ package _13MY다형성게임;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class UnitManager {
+public class UnitManager{
 
 	ArrayList<Player> playerList = new ArrayList<Player>();
 	ArrayList<Unit> monList = new ArrayList<Unit>();
@@ -20,15 +20,16 @@ public class UnitManager {
 	public void monsterRandomSet(int size) {
 		for(int i = 0; i < size; i++) {
 			int num = rd.nextInt(monster.length);
+			if(num == 0) {
+				monList.add(new UnitWolf());
+			}else if(num == 1) {
+				monList.add(new UnitBat());
+			}else if(num == 2) {
+				monList.add(new UnitOrc());
+			}
 			int hp = rd.nextInt(100)+100;
-			int power = rd.nextInt(11)+10;
-			
-			
-			
-			
-			
+			int power = rd.nextInt(10)+10;
+			monList.get(i).init(hp, power);
 		}
-		
 	}
-	
 }
